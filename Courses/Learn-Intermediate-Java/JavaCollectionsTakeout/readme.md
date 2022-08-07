@@ -5,15 +5,6 @@ From CodeCademy.com
 ##[Project: Let's Get Takeout!](https://www.codecademy.com/courses/learn-intermediate-java/projects/intermediate-java-collections-takeout)
 Hope you’re hungry! Using the collections framework, generics, and the rest of your knowledge of Java we’ll create a take-out system. We’ll define classes, interfaces, and methods (generic and non-generic) needed to represent our system and perform our take-out logic with the help of Java collections.
 
-TO SOLVE
-- Re-check Task 20;
-- Task 21;
-
-other links
-
-https://www.techiedelight.com/pt/iterate-map-in-java-using-entryset/
-https://www.geeksforgeeks.org/hashmap-entryset-method-in-java/
-https://www.geeksforgeeks.org/hashmap-put-method-in-java/
 ###LIST OF TASKS:
 
 ####Core Data Types
