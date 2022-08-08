@@ -20,7 +20,6 @@ public class TakeOutSimulator {
         while (true) {
             System.out.println("");
             System.out.println("Hello " + customer.getName() + ", Welcome to my restaurant!");
-            // shouldSimulate();
             takeOutPrompt();
         }
     }
@@ -30,9 +29,8 @@ public class TakeOutSimulator {
             try {
                 System.out.println(userInputPrompt);
                 int selection = input.nextInt();
-                if (input.hasNextInt()) {
                     return (T) intUserInputRetriever.produceOutputOnIntUserInput(selection);
-                }
+
             } catch (IllegalArgumentException illegalArgumentException) {
                 System.out.println("Your input isn't valid. It needs to be an `int` type. Try again");
             }
@@ -40,7 +38,7 @@ public class TakeOutSimulator {
     }
 
     public boolean shouldSimulate() {
-        String userPrompt = "Enter 1 to RESTART simulation or 0 to EXIT program: ";
+        String userPrompt = "[Enter 1 to RESTART simulation or 0 to EXIT program: ]";
         IntUserInputRetriever intUserInputRetriever = (int selection) -> {
             if (selection == 1 && customer.getMoney() >= menu.getLowestCostFood().getPrice()) {
                 return true;
@@ -58,13 +56,22 @@ public class TakeOutSimulator {
     }
 
     public Food getMenuSelection() {
-        String userPrompt = "Today's Menu Options! \n" +
+        String userPrompt = "Today's Menu Options! (select option number) \n" +
                 menu.toString();
         IntUserInputRetriever intUserInputRetriever = (int selection) -> {
-            if (menu.getFood(selection) == null) {
-                throw illegalArgumentException;
+            while (true) {
+
+                //Food chosenFood = menu.getFood(selection);
+                menu.getFood(selection);
+                if (menu.getFood(selection) == null) {
+                    System.out.println("Invalid selection. Choose one from the options available below\n" +
+                            "");
+                    System.out.println(userPrompt);
+                    selection = input.nextInt();
+                } else {
+                    return menu.getFood(selection);
+                }
             }
-            return menu.getFood(selection);
         };
         return getOutputOnIntInput(userPrompt, intUserInputRetriever);
     }
@@ -91,8 +98,14 @@ public class TakeOutSimulator {
     public void checkoutCustomer(ShoppingBag<Food> shoppingBag) {
         System.out.println("Processing payment...");
         customer.setMoney(customer.getMoney() - shoppingBag.getTotalPrice());
+        try{Thread.sleep(1500);}catch(InterruptedException e){System.out.println(e);}
         System.out.println("Your remaining money is: €" + customer.getMoney());
-        System.out.println("Thanks for your purchase. Enjoy your meal!");
+        try{Thread.sleep(500);}catch(InterruptedException e){System.out.println(e);}
+        System.out.println("Thanks for your purchase, enjoy your meal and...");
+        try{Thread.sleep(1500);}catch(InterruptedException e){System.out.println(e);}
+        System.out.println("HOPE TO SEE YOU SOON!\n" +
+                ":)");
+        try{Thread.sleep(3000);}catch(InterruptedException e){System.out.println(e);}
         if (shouldSimulate() == false) {
             System.exit(0);
         } else {
@@ -105,18 +118,17 @@ public class TakeOutSimulator {
         int customerMoneyLeft = customer.getMoney();
 
         while (true) {
-            System.out.println("");
-            System.out.println("You have " + customerMoneyLeft + "€ left to spend.\n" +
-                    "");
 
             Food selectedFood = getMenuSelection();
+            if (selectedFood == null){
+                getMenuSelection();
+            }
             System.out.println("You've chosen: " + selectedFood);
 
             if (customerMoneyLeft >= selectedFood.getPrice()) {
                 customerMoneyLeft -= selectedFood.getPrice();
                 shoppingBag.addItem(selectedFood);
                 System.out.println("Now you have €" + customerMoneyLeft + " currently available.");
-                //isStillOrderingFood();
                     if (isStillOrderingFood()) {
                      continue;
                     } else {
@@ -125,10 +137,8 @@ public class TakeOutSimulator {
                     }
             } else {
                 System.out.println("Oops! Looks like you don't have enough for that. Do you want to check for another food? (yes/no)");
-                input.next();
                 if (Objects.equals(input.next(), "no")) {
-                    System.out.println("Hope to see you again soon!");
-                    break;
+                    checkoutCustomer(shoppingBag);
                 } else{
                     continue;
                 }

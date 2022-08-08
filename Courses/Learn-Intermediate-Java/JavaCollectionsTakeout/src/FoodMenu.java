@@ -15,9 +15,9 @@ public class FoodMenu {
         menu.add(caldoVerde);
     }
 
-    public Food getFood(int index) throws IndexOutOfBoundsException {
+    public Food getFood(int index) {
         int realIndex = index -1;
-        if(realIndex > menu.size() || realIndex < 0){
+        if(realIndex >= menu.size() || realIndex < 0){
              return null;
          }
         return menu.get(realIndex);
