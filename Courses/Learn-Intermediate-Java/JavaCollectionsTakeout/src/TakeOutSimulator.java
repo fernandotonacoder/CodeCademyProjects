@@ -1,3 +1,4 @@
+import java.util.InputMismatchException;
 import java.util.Objects;
 import java.util.Scanner;
 
@@ -31,8 +32,9 @@ public class TakeOutSimulator {
                 int selection = input.nextInt();
                     return (T) intUserInputRetriever.produceOutputOnIntUserInput(selection);
 
-            } catch (IllegalArgumentException illegalArgumentException) {
+            } catch (InputMismatchException inputMismatchException) {
                 System.out.println("Your input isn't valid. It needs to be an `int` type. Try again");
+                input = new Scanner(System.in);
             }
         }
     }
@@ -60,8 +62,6 @@ public class TakeOutSimulator {
                 menu.toString();
         IntUserInputRetriever intUserInputRetriever = (int selection) -> {
             while (true) {
-
-                //Food chosenFood = menu.getFood(selection);
                 menu.getFood(selection);
                 if (menu.getFood(selection) == null) {
                     System.out.println("Invalid selection. Choose one from the options available below\n" +
