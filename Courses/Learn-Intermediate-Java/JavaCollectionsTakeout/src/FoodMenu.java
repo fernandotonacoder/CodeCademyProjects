@@ -1,12 +1,12 @@
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
 
 public class FoodMenu {
 
-    private LinkedList<Food> menu;
+    private List<Food> menu;
 
     public FoodMenu() {
-
-        menu = new LinkedList<>();
+        menu = new ArrayList<>();
         Food pasta = new Food("Pasta", "Italian traditional pasta", 10);
         Food pizza = new Food("Pizza", "Genuine Italian pizza", 12);
         Food caldoVerde = new Food("Caldo verde", "Portuguese traditional soup", 4);
@@ -16,16 +16,14 @@ public class FoodMenu {
     }
 
     public Food getFood(int index) throws IndexOutOfBoundsException {
-         int realIndex = index -1;
+        int realIndex = index -1;
         if(realIndex > menu.size() || realIndex < 0){
              return null;
          }
-
         return menu.get(realIndex);
     }
 
     public Food getLowestCostFood() {
-
         Food current = null;
         int minValue = Integer.MAX_VALUE;
         for (Food food : menu) {
@@ -37,7 +35,6 @@ public class FoodMenu {
         }
         return current;
     }
-
 
     @Override
     public String toString() {

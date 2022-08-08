@@ -20,11 +20,11 @@ public class ShoppingBag<T extends PricedItem<Integer>> {
             }
 
     public int getTotalPrice() {
-        Integer totalPrice = 0;
+        int totalPrice = 0;
         for (T key : shoppingBag.keySet()) {
             totalPrice += key.getPrice() * shoppingBag.get(key);
         }
-        return totalPrice.intValue();
+        return totalPrice;
     }
 
 
