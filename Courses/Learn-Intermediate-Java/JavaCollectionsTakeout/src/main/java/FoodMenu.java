@@ -10,9 +10,21 @@ public class FoodMenu {
         Food pasta = new Food("Pasta", "Italian traditional pasta", 10);
         Food pizza = new Food("Pizza", "Genuine Italian pizza", 12);
         Food caldoVerde = new Food("Caldo verde", "Portuguese traditional soup", 4);
+        Food water = new Food("Water","1 liter bottle", 1);
+        Food wine = new Food("Red wine","75ml bottle of Portuguese wine",5);
+        Food beer = new Food("Beer", "Regular Pilsner beer", 2);
+        Food cola = new Food("Cola", "Coca-Cola", 2);
+        Food mousse = new Food("Chocolate Mousse","Homemade chocolate mousse", 3);
+        Food espresso = new Food("Espresso","Short coffee", 1);
         menu.add(pasta);
         menu.add(pizza);
         menu.add(caldoVerde);
+        menu.add(water);
+        menu.add(wine);
+        menu.add(beer);
+        menu.add(cola);
+        menu.add(mousse);
+        menu.add(espresso);
     }
 
     public Food getFood(int index) {

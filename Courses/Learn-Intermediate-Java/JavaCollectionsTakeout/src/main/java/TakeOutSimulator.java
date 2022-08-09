@@ -7,9 +7,7 @@ public class TakeOutSimulator {
     private Customer customer;
     private FoodMenu menu;
     private Scanner input;
-    private IntUserInputRetriever intUserInputRetriever;
-    private IllegalArgumentException illegalArgumentException;
-
+    private ShoppingBag<Food> shoppingBag;
 
     public TakeOutSimulator(Customer customer, Scanner input) {
         this.customer = customer;
@@ -41,7 +39,7 @@ public class TakeOutSimulator {
     }
 
     public boolean shouldSimulate() {
-        String userPrompt = "[Enter 1 to RESTART simulation or 0 to EXIT program: ]";
+        String userPrompt = "[Enter 1 to RESUME or 0 to EXIT program: ]";
         IntUserInputRetriever intUserInputRetriever = (int selection) -> {
             if (selection == 1 && customer.getMoney() >= menu.getLowestCostFood().getPrice()) {
                 return true;
@@ -52,18 +50,29 @@ public class TakeOutSimulator {
                 System.out.println("Bye bye! Come again soon!");
                 return false;
             } else {
-                throw illegalArgumentException;
+                System.out.println("Invalid selection. Please try again");
+                return shouldSimulate();
             }
         };
         return getOutputOnIntInput(userPrompt, intUserInputRetriever);
     }
 
     public Food getMenuSelection() {
-        String userPrompt = "You have €" + customer.getMoney() + " left.\n" +
+        String userPrompt = "\n" +
+                "You have €" + customer.getMoney() + " left.\n" +
                 "Today's Menu Options! (select option number) \n" +
-                menu.toString();
+                menu.toString() +"\n"+
+                "[Enter 0 to CHECKOUT or 100 to EXIT]";
         IntUserInputRetriever intUserInputRetriever = (int selection) -> {
             while (true) {
+                if (selection == 0){
+                    checkoutCustomer(shoppingBag);
+                }
+                if (selection == 100) {
+                    if (!shouldSimulate()){
+                        System.exit(0);
+                    }
+                }
                 menu.getFood(selection);
                 if (menu.getFood(selection) == null) {
                     System.out.println("Invalid selection. Choose one from the options available below\n" +
@@ -79,7 +88,7 @@ public class TakeOutSimulator {
     }
 
     public boolean isStillOrderingFood() {
-        String userPrompt = "Enter 1 to CONTINUE shopping or 0 to CHECKOUT: ";
+        String userPrompt = "[Enter 1 to CONTINUE shopping or 0 to CHECKOUT]";
         IntUserInputRetriever intUserInputRetriever = (int selection) -> {
             if (selection == 1) {
                 return true;
@@ -94,6 +103,15 @@ public class TakeOutSimulator {
     }
 
     public void checkoutCustomer(ShoppingBag<Food> shoppingBag) {
+        if (shoppingBag.getTotalPrice() == 0) {
+            System.out.println("Your cart is empty");
+            try{Thread.sleep(1600);}catch(InterruptedException e){System.out.println(e);}
+            System.out.println("Hope we have something that pleases you for the next time");
+            try{Thread.sleep(2000);}catch(InterruptedException e){System.out.println(e);}
+            System.out.println("Come again soon!");
+            try{Thread.sleep(1600);}catch(InterruptedException e){System.out.println(e);}
+            System.exit(0);
+        }
         System.out.println("Processing payment...");
         customer.setMoney(customer.getMoney() - shoppingBag.getTotalPrice());
         try{Thread.sleep(1500);}catch(InterruptedException e){System.out.println(e);}
@@ -112,7 +130,7 @@ public class TakeOutSimulator {
     }
 
     public void takeOutPrompt() {
-        ShoppingBag<Food> shoppingBag = new ShoppingBag<>();
+        shoppingBag = new ShoppingBag<>();
         int customerMoneyLeft = customer.getMoney();
 
         while (true) {
@@ -121,7 +139,8 @@ public class TakeOutSimulator {
             if (selectedFood == null){
                 getMenuSelection();
             }
-            System.out.println("You've chosen: " + selectedFood);
+            System.out.println("\n" +
+                    "You've chosen: " + selectedFood);
 
             if (customerMoneyLeft >= selectedFood.getPrice()) {
                 customerMoneyLeft -= selectedFood.getPrice();
