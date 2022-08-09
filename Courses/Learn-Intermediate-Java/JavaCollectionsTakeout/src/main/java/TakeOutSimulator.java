@@ -113,8 +113,9 @@ public class TakeOutSimulator {
             System.exit(0);
         }
         System.out.println("Processing payment...");
-        customer.setMoney(customer.getMoney() - shoppingBag.getTotalPrice());
         try{Thread.sleep(1500);}catch(InterruptedException e){System.out.println(e);}
+        System.out.println("DONE!");
+        try{Thread.sleep(200);}catch(InterruptedException e){System.out.println(e);}
         System.out.println("Your remaining money is: €" + customer.getMoney());
         try{Thread.sleep(500);}catch(InterruptedException e){System.out.println(e);}
         System.out.println("Thanks for your purchase, enjoy your meal and...");
