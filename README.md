@@ -2,7 +2,7 @@
  <body>
   <div md-src-pos="0..1077">
    <h1 md-src-pos="0..20">CodeCademyProjects</h1>
-   <p md-src-pos="21..149"><span md-src-pos="21..64">My implementations and solutions on some of</span> <a href="https://www.codecademy.com/profiles/fernandotona" md-src-pos="65..131">CodeCademy.com</a> <span md-src-pos="132..149">courses projects.</span></p>
+   <p md-src-pos="21..149"><span md-src-pos="21..64">My implementations and solutions (with extra features) on some of</span> <a href="https://www.codecademy.com/profiles/fernandotona" md-src-pos="65..131">CodeCademy.com</a> <span md-src-pos="132..149">courses projects.</span></p>
    <h2 md-src-pos="151..157">Java</h2>
    <img src="resources/java.gif" alt="java GIF">
    <h3 md-src-pos="182..309"><a href="https://github.com/fernandotonacoder/CodeCademyProjects/tree/main/Courses/Learn-Intermediate-Java" md-src-pos="185..309">Learn Intermediate Java</a></h3>
