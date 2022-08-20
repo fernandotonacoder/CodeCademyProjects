@@ -8,7 +8,8 @@
    <h4 md-src-pos="113..148">Subject: GENERICS &amp; COLLECTIONS</h4>
    <h2 md-src-pos="150..288"><a href="https://www.codecademy.com/courses/learn-intermediate-java/projects/intermediate-java-collections-takeout" md-src-pos="152..288">Project: Let's Get Takeout!</a></h2>
    <p md-src-pos="289..591"><span md-src-pos="289..307">Hope you’re hungry</span>! <span md-src-pos="309..341">Using the collections framework,</span> <span md-src-pos="342..351">generics,</span> <span md-src-pos="352..422">and the rest of your knowledge of Java we’ll create a take-out system.</span> <span md-src-pos="423..444">We’ll define classes,</span> <span md-src-pos="445..456">interfaces,</span> <span md-src-pos="457..468">and methods</span> (<span md-src-pos="470..493">generic and non-generic</span>) <span md-src-pos="495..591">needed to represent our system and perform our take-out logic with the help of Java collections.</span></p>
-   <h3 md-src-pos="593..610">LIST OF TASKS:</h3>
+   <P md-src-pos="150..288"><a href="https://github.com/fernandotonacoder/CodeCademyProjects/releases/tag/Learn_Intermediate_Java_JavaTakeoutSimulator" md-src-pos="152..288">CHECKOUT THE FINAL RELEASE OF THIS PROJECT!</a></P>
+<h3 md-src-pos="593..610">LIST OF TASKS:</h3>
    <h4 md-src-pos="612..631">Core Data Types</h4>
    <p md-src-pos="632..727"><strong md-src-pos="632..638">1.</strong> <span md-src-pos="639..664">Let’s start by creating a</span> <code md-src-pos="665..672">class</code> <span md-src-pos="673..727">that will represent a customer in the take-out system.</span></p>
    <p md-src-pos="729..813"><span md-src-pos="729..731">In</span> <strong md-src-pos="732..749">Customer.java</strong><span md-src-pos="749..750">,</span> <span md-src-pos="751..759">create a</span> <code md-src-pos="760..770">Customer</code> <span md-src-pos="771..795">class with the following</span> <code md-src-pos="796..805">private</code> <span md-src-pos="806..812">fields</span>:</p>
