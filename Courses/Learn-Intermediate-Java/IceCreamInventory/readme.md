@@ -8,7 +8,8 @@
    <p md-src-pos="166..194"><strong md-src-pos="166..194">Subject: NESTED CLASSES.</strong></p>
    <h2 md-src-pos="196..325">Project: <a href="https://www.codecademy.com/courses/learn-intermediate-java/projects/java-nested-classes-project" md-src-pos="207..325">Ice Cream Inventory</a></h2>
    <p md-src-pos="327..663"><span md-src-pos="327..343">Congratulations,</span> <span md-src-pos="344..446">you have just landed a new contract to build out an application for a new local ice cream shop in town</span>! <span md-src-pos="448..544">They need a program that will help them sort out and keep track of their inventory of ice cream,</span> <span md-src-pos="545..552">shakes,</span> <span md-src-pos="553..562">slushies,</span> <span md-src-pos="563..577">and smoothies.</span> <span md-src-pos="578..663">This Java program will have to keep count of how many of each product the shop sells.</span></p>
-   <h3 md-src-pos="665..685"><strong md-src-pos="668..685">LIST OF TASKS</strong></h3>
+<P md-src-pos="150..288"><a href="https://github.com/fernandotonacoder/CodeCademyProjects/releases/tag/Learn_Intermediate_Java_IceCreamInventory" md-src-pos="152..288">CHECKOUT THE FINAL RELEASE OF THIS PROJECT!</a></P>   
+<h3 md-src-pos="665..685"><strong md-src-pos="668..685">LIST OF TASKS</strong></h3>
    <h4 md-src-pos="686..731"><strong md-src-pos="690..731">Create a nested class named NonVegan.</strong></h4>
    <p md-src-pos="733..814"><strong md-src-pos="733..739">1.</strong> <span md-src-pos="740..773">Create a nested class and name it</span> <code md-src-pos="774..784">NonVegan</code><span md-src-pos="784..785">.</span> <span md-src-pos="786..813">Add the following variables</span>:</p>
    <p md-src-pos="816..836"><code md-src-pos="816..836">int iceCreamCount;</code></p>
