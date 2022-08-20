@@ -10,6 +10,7 @@
    <p md-src-pos="583..681"><span md-src-pos="583..635">Let’s see if we can mimic the basic functionality of</span> <code md-src-pos="636..642">grep</code> <span md-src-pos="643..681">in Java using your knowledge of regex.</span></p>
    <p md-src-pos="683..803"><span md-src-pos="683..690">Write a</span> <strong md-src-pos="691..704">Grep.java</strong> <span md-src-pos="705..803">program that outputs the text matched by a regex pattern and the file name the match was found in.</span></p>
    <p md-src-pos="805..949"><a href="https://github.com/fernandotonacoder/CodeCademyProjects/releases/tag/Learn_Intermediate_Java_Grep" md-src-pos="805..949">CHECKOUT THE FINAL RELEASE OF THIS PROJECT!</a></p>
+   <br></br>
    <h3 md-src-pos="952..972"><strong md-src-pos="955..972">LIST OF TASKS</strong></h3>
    <h4 md-src-pos="974..1017"><strong md-src-pos="978..1017">OPENING AND SCANNING THE TEXT FILES</strong></h4>
    <p md-src-pos="1019..1080"><strong md-src-pos="1019..1025">1.</strong> <span md-src-pos="1026..1061">Let’s start by opening the provided</span> <code md-src-pos="1062..1068">.txt</code> <span md-src-pos="1069..1080">test files.</span></p>
